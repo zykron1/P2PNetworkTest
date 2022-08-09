@@ -31,9 +31,12 @@ while True:
     #Parse the request
     phrases = request.split(" ")
     if phrases[0] == "MakeConn":
-        #Send a message back to the client
-        QuickStore.append(addr)
-        c.send(str(len(QuickStore)-1).encode())
+        try:
+            #Send a message back to the client
+            QuickStore.append(f'{addr[0]}:{phrases[1]}')
+            c.send(str(len(QuickStore)-1).encode())
+        except:
+            c.send("Invalid Input".encode())
     if phrases[0] == "GetConn":
         try:
             c.send(str(QuickStore[int(phrases[1])]).encode())
