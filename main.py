@@ -36,7 +36,7 @@ while True:
         c.send(str(len(QuickStore)-1).encode())
     if phrases[0] == "GetConn":
         try:
-            c.send(str(QuickStore[int(phrases[1])][).encode())
+            c.send(str(QuickStore[int(phrases[1])]).encode())
         except:
             c.send("Invalid Input".encode())
     # Close the connection with the client
