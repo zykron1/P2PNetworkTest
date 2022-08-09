@@ -10,7 +10,7 @@ obj = socket.socket()
 obj.connect((host,port))
 
 #Send a message
-message = input("Please enter your message:  ")
+message = input("Please enter your message: ")
 obj.send(message.encode())
 data = obj.recv(1024).decode()
 print('Received from server: ' + data)
