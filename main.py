@@ -30,7 +30,4 @@ while True:
     print(f"[MESSAGE] {addr} sent {request}")
 
     # Close the connection with the client
-    c.close()
-   
-    # Breaking once connection closed
-    break
+    c.close() 
